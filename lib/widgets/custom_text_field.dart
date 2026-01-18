@@ -20,22 +20,30 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscureText,
-      style: TextStyle(color: Colors.black87, fontSize: 16),
+      style: TextStyle(
+        color: AppColors.inputText, 
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(color: AppColors.primaryBrown),
+        labelStyle: TextStyle(
+          color: Colors.grey[700],
+          fontSize: 14,
+        ),
         prefixIcon: prefixIcon != null
-            ? Icon(prefixIcon, color: AppColors.accentGold)
+            ? Icon(prefixIcon, color: AppColors.primaryBrown, size: 22)
             : null,
         filled: true,
-        fillColor: AppColors.cardBrown,
+        fillColor: AppColors.inputBackground,
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.grey[300]!, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: AppColors.lightBrown, width: 1),
+          borderSide: BorderSide(color: Colors.grey[300]!, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

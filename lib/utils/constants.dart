@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class AppColors {
-  // Modern brown/golden color scheme
-  static const Color primaryBrown = Color(0xFFB8860B); // Golden brown
+  // Modern dark brown/golden color scheme - like sophisticated bookstore
+  static const Color primaryBrown = Color(0xFF5D4037); // Dark brown
   static const Color secondaryBrown = Color(0xFF8B6914);
-  static const Color lightBrown = Color(0xFFD4A76A);
-  static const Color accentGold = Color(0xFFDAA520); // Goldenrod
-  static const Color backgroundDark = Color(0xFFFAF3E0); // Cream/beige background
+  static const Color lightBrown = Color(0xFFBCAAA4); // Light brown
+  static const Color accentGold = Color(0xFFFFB300); // Bright gold
+  static const Color backgroundDark = Color(0xFF3E2723); // Very dark brown background
   static const Color backgroundLight = Color(0xFFFFFFFF);
-  static const Color textLight = Colors.black87; // Black text for visibility
-  static const Color textDark = Colors.black87; // Black text for visibility
-  static const Color cardBrown = Color(0xFFFFFFFF); // White cards
-  static const Color cardBackground = Color(0xFFF5EDD8); // Light cream for cards
-  static const Color buttonGold = Color(0xFFB8860B);
+  static const Color textLight = Colors.white; // White text on dark backgrounds
+  static const Color textDark = Colors.black87; // Black text on light backgrounds
+  static const Color cardBrown = Color(0xFF6D4C41); // Medium brown for cards
+  static const Color cardBackground = Color(0xFF4E342E); // Dark brown card background
+  static const Color buttonGold = Color(0xFFFFB300); // Bright gold for buttons
   static const Color ratingGold = Color(0xFFFFD700);
+  static const Color inputBackground = Color(0xFFF5F5F5); // Light gray for input fields
+  static const Color inputText = Colors.black87; // Black text in inputs
 }
 
 class AppConstants {

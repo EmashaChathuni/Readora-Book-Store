@@ -4,6 +4,7 @@ import '../widgets/custom_text_field.dart';
 import '../widgets/custom_button.dart';
 import '../utils/constants.dart';
 import 'signup_screen.dart';
+import 'profile_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -32,11 +33,19 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text,
       );
+      
+      // Navigate to profile screen after successful login
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => ProfileScreen()),
+        );
+      }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Login failed: ${e.toString()}'),
-          backgroundColor: AppColors.secondaryBrown,
+          backgroundColor: Colors.red,
         ),
       );
     } finally {

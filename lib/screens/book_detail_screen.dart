@@ -25,39 +25,68 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
     // Check if user is logged in
     final userId = _authService.currentUser?.uid;
     if (userId == null) {
-      // Show dialog to login
-      showDialog(
+      // Show modern login dialog
+      final result = await showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          title: Text('Login Required', style: TextStyle(color: AppColors.textDark, fontWeight: FontWeight.bold)),
+          backgroundColor: AppColors.cardBrown,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Row(
+            children: [
+              Icon(Icons.lock_outline, color: AppColors.accentGold, size: 28),
+              SizedBox(width: 12),
+              Text(
+                'Login Required',
+                style: TextStyle(
+                  color: AppColors.textLight,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
           content: Text(
-            'Please login to add items to cart',
-            style: TextStyle(color: Colors.grey[700]),
+            'Please login to add items to your cart and make purchases',
+            style: TextStyle(
+              color: AppColors.textLight.withOpacity(0.9),
+              fontSize: 16,
+            ),
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Cancel', style: TextStyle(color: Colors.grey)),
+              onPressed: () => Navigator.pop(context, false),
+              child: Text(
+                'Cancel',
+                style: TextStyle(color: AppColors.textLight.withOpacity(0.7)),
+              ),
             ),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => LoginScreen()),
-                );
-              },
+              onPressed: () => Navigator.pop(context, true),
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.buttonGold,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                backgroundColor: AppColors.accentGold,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),
-              child: Text('Login', style: TextStyle(color: AppColors.accentGold)),
+              child: Text(
+                'Login Now',
+                style: TextStyle(
+                  color: AppColors.backgroundDark,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),
       );
+      
+      if (result == true) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => LoginScreen()),
+        );
+      }
       return;
     }
 
