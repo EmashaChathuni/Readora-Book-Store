@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "664325323108",
+    "project_id": "readora-319f5",
+    "storage_bucket": "readora-319f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664325323108:android:b163165d0ed0aa9e62e271",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA2IkZGAx6JPtW1e1-vPYc3CSol6vZKLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
