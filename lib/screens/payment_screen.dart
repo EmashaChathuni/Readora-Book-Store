@@ -89,16 +89,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
       // Create order
       await _firestoreService.createOrder(
-        userId: user.uid,
-        items: widget.cartItems,
-        totalAmount: widget.totalAmount,
-        paymentMethod: _selectedPaymentMethod,
-        deliveryAddress: _addressController.text,
+        user.uid,
+        widget.cartItems,
+        widget.totalAmount,
       );
 
       // Clear cart
       for (var item in widget.cartItems) {
-        await _firestoreService.removeFromCart(user.uid, item.bookId);
+        await _firestoreService.removeFromCart(user.uid, item.book.id);
       }
 
       setState(() => _isProcessing = false);
@@ -395,7 +393,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             style: TextStyle(color: AppColors.inputText),
             decoration: InputDecoration(
               labelText: 'Card Number',
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
               filled: true,
               fillColor: AppColors.inputBackground,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -407,7 +405,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             style: TextStyle(color: AppColors.inputText),
             decoration: InputDecoration(
               labelText: 'Card Holder Name',
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
               filled: true,
               fillColor: AppColors.inputBackground,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -423,7 +421,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   style: TextStyle(color: AppColors.inputText),
                   decoration: InputDecoration(
                     labelText: 'MM/YY',
-                    labelStyle: TextStyle(color: Colors.grey[700]),
+                    labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
                     filled: true,
                     fillColor: AppColors.inputBackground,
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -439,7 +437,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   style: TextStyle(color: AppColors.inputText),
                   decoration: InputDecoration(
                     labelText: 'CVV',
-                    labelStyle: TextStyle(color: Colors.grey[700]),
+                    labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
                     filled: true,
                     fillColor: AppColors.inputBackground,
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -478,7 +476,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             style: TextStyle(color: AppColors.inputText),
             decoration: InputDecoration(
               labelText: 'Delivery Address',
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
               filled: true,
               fillColor: AppColors.inputBackground,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -491,7 +489,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             style: TextStyle(color: AppColors.inputText),
             decoration: InputDecoration(
               labelText: 'Phone Number',
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelStyle: TextStyle(color: AppColors.textDark.withOpacity(0.7)),
               filled: true,
               fillColor: AppColors.inputBackground,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),

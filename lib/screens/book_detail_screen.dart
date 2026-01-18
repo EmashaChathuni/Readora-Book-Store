@@ -170,7 +170,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: AppColors.textLight,
                     ),
                   ),
                   if (widget.book.titleEnglish != null) ...[
@@ -179,7 +179,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                       widget.book.titleEnglish!,
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.grey[600],
+                        color: AppColors.textLight.withOpacity(0.8),
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -189,7 +189,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                     'by ${widget.book.authorEnglish ?? widget.book.author}',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.grey[600],
+                      color: AppColors.textLight.withOpacity(0.7),
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -201,7 +201,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                       Text(
                         widget.book.rating.toStringAsFixed(1),
                         style: TextStyle(
-                          color: Colors.black87,
+                          color: AppColors.textLight,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
@@ -230,7 +230,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: AppColors.textLight,
                     ),
                   ),
                   SizedBox(height: 8),
@@ -238,7 +238,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
                     widget.book.description,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Colors.black87,
+                      color: AppColors.textLight.withOpacity(0.9),
                       height: 1.6,
                     ),
                   ),

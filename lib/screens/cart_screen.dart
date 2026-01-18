@@ -71,11 +71,11 @@ class _CartScreenState extends State<CartScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.shopping_cart_outlined, size: 80, color: Colors.grey[400]),
+                  Icon(Icons.shopping_cart_outlined, size: 80, color: AppColors.textLight.withOpacity(0.5)),
                   SizedBox(height: 16),
                   Text(
                     'Please login to view cart',
-                    style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(color: AppColors.textLight, fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
@@ -93,11 +93,11 @@ class _CartScreenState extends State<CartScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.shopping_cart_outlined, size: 80, color: Colors.grey[400]),
+                        Icon(Icons.shopping_cart_outlined, size: 80, color: AppColors.textLight.withOpacity(0.5)),
                         SizedBox(height: 16),
                         Text(
                           'Your cart is empty',
-                          style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w500),
+                          style: TextStyle(color: AppColors.textLight, fontSize: 18, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),

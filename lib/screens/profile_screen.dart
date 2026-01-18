@@ -252,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               final cartItems = snapshot.data!;
               final total = cartItems.fold<double>(
                 0,
-                (sum, item) => sum + (item.price * item.quantity),
+                (sum, item) => sum + (item.book.price * item.quantity),
               );
 
               return Container(
@@ -365,7 +365,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           SizedBox(height: 12),
           StreamBuilder<List<Order>>(
-            stream: _firestoreService.getUserOrders(userId),
+            stream: _firestoreService.getOrders(userId),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(

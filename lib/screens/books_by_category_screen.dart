@@ -108,10 +108,10 @@ class _BooksByCategoryScreenState extends State<BooksByCategoryScreen> {
               onChanged: (value) {
                 setState(() => _searchQuery = value);
               },
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: AppColors.textLight),
               decoration: InputDecoration(
                 hintText: 'Search books in ${widget.categoryName}...',
-                hintStyle: TextStyle(color: Colors.grey[600]),
+                hintStyle: TextStyle(color: AppColors.textLight.withOpacity(0.6)),
                 prefixIcon: Icon(Icons.search, color: AppColors.buttonGold),
                 suffixIcon: _searchQuery.isNotEmpty
                     ? IconButton(
@@ -157,7 +157,7 @@ class _BooksByCategoryScreenState extends State<BooksByCategoryScreen> {
                         SizedBox(height: 16),
                         Text(
                           'Error loading books',
-                          style: TextStyle(color: Colors.black87, fontSize: 16),
+                          style: TextStyle(color: AppColors.textLight, fontSize: 16),
                         ),
                       ],
                     ),
@@ -181,7 +181,7 @@ class _BooksByCategoryScreenState extends State<BooksByCategoryScreen> {
                         Icon(
                           Icons.book_outlined,
                           size: 80,
-                          color: Colors.grey[400],
+                          color: AppColors.textLight.withOpacity(0.5),
                         ),
                         SizedBox(height: 16),
                         Text(
@@ -190,7 +190,7 @@ class _BooksByCategoryScreenState extends State<BooksByCategoryScreen> {
                               : 'No books found',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.black87,
+                            color: AppColors.textLight,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -200,7 +200,7 @@ class _BooksByCategoryScreenState extends State<BooksByCategoryScreen> {
                             'Try a different search term',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Colors.grey[500],
+                              color: AppColors.textLight.withOpacity(0.7),
                             ),
                           ),
                         ],
